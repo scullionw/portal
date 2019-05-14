@@ -34,7 +34,7 @@ fn set_active_input(input: &DisplayInput) -> Result<(), Box<dyn Error>> {
 
 #[cfg(unix)]
 fn set_active_input(input: &DisplayInput) -> Result<(), Box<dyn Error>> {
-    let output = Command::new("ddcctl")
+    let output = Command::new("/usr/local/bin/ddcctl")
         .args(&["-d", "1", "-i", input.ddcctl_command()])
         .output()?;
 
